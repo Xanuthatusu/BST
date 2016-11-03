@@ -11,7 +11,7 @@ class BST:
       self._root = Node(item)
       return True
     if self.exists(item):
-      print("exists")
+      print("Student with ssn: %s already exists!" % item.ssn)
       return False
     n = Node(item)
     self._root = self.insertR(n, self._root)
@@ -102,21 +102,4 @@ class BST:
       print(item.ssn)
     self.traverse(printf)
     print("")
-
-def main():
-  t = BST()
-  t.insert(Student("George", "Anthony", 435287, "pategeorge12@gmail.com", 16))
-  t.insert(Student("George", "Bradley", 835287, "pategeorge12@gmail.com", 32))
-  t.insert(Student("igfvbtfv", "rtyujfd", 736234, "adkfj", 56))
-  t.insert(Student("George", "Wesley", 903234, "pategeorge12@gmail.com", 17))
-  t.insert(Student("George", "Dick", 234565, "pategeorge12@gmail.com", 15))
-
-  t.printTree()
-
-  print(t.retrieve(835287))
-  t.delete(835287)
-
-  t.printTree()
-
-main()
 
