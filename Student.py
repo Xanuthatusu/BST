@@ -21,3 +21,6 @@ class Student:
       return self.ssn > rhs.ssn
     return self.ssn > rhs
 
+  def __str__(self):
+    return (self.fName + " " + self.lName + " - " + self.ssn)
+

@@ -96,10 +96,16 @@ class BST:
         current.item = s.item
         current.right = self.deleteR(s.item, current.right)
     return current
-  
-  def printTree(self):
-    def printf(item):
-      print(item.ssn)
-    self.traverse(printf)
-    print("")
+
+  def __str__(self):
+    def getTree(level=0, current=self._root, string=""):
+      if not current:
+        return string
+
+      string += ("\t|" * level) + " -> " + str(current.item) + "\n"
+      string = getTree(level + 1, current.left, string)
+      string = getTree(level + 1, current.right, string)
+      return string
+
+    return getTree()
 

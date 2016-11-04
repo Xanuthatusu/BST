@@ -17,5 +17,7 @@ def main():
       student = Student(*values)
       tree.insert(student)
 
+  print(tree)
+
 main()
 
