@@ -11,7 +11,7 @@ class BST:
       self._root = Node(item)
       return True
     if self.exists(item):
-      print("Student with ssn: %s already exists!" % item.ssn)
+      print("%s with ssn: %s already exists!" % (item.fName, item.ssn))
       return False
     n = Node(item)
     self._root = self.insertR(n, self._root)
@@ -62,6 +62,7 @@ class BST:
     if current == False:
       current = self._root
     if current is None:
+      print("Can not find student with ssn: %s! Error 404 - Student not found!" % item)
       return False
     elif item == current.item:
       return current.item
@@ -72,6 +73,7 @@ class BST:
 
   def delete(self, item):
     if not self.exists(item):
+      print("Can not delete student with ssn: %s! Error 404 - Student not found!" % item)
       return False
     self._root = self.deleteR(item, self._root)
     return True
